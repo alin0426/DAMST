@@ -14,7 +14,9 @@ torch-npu: 2.4.0.post2
 ```
 
 ## Dataset
+[Download]()
 
+Raw data from [github](https://github.com/bonaldli/VisionTraj), [dataset](https://drive.google.com/drive/folders/1e5clH_lgFEjJp9AtS8gJlzrRiBksZ896?usp=sharing)
 
 ## Finetune
 ```bash
