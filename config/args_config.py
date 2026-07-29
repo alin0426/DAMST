@@ -84,10 +84,10 @@ def get_args_parser():
 
     parser.add_argument("--resume", type=str, default=None, help="path to checkpoint (.pth)")
     parser.add_argument('--test_cache', default=False, action='store_true', help='save all cached files to test_cache')
-    parser.add_argument('--kg_loss_weight', type=float, default=0.01, help='weight for KG graph alignment loss')  # KG 瀵归綈鎹熷け鐨勬潈锟?
-    parser.add_argument('--kg_loss_samples', type=int, default=4096, help='edges sampled per step for KG loss')  # 每锟斤拷锟斤拷锟斤拷锟侥憋拷锟斤拷
+    parser.add_argument('--kg_loss_weight', type=float, default=0.01, help='weight for KG graph alignment loss')  
+    parser.add_argument('--kg_loss_samples', type=int, default=4096, help='edges sampled per step for KG loss')  
     parser.add_argument('--gap_cls_weight', type=float, default=1.0, help='weight for gap empty classifier loss')  # gap empty classifier loss weight
-    parser.add_argument('--output', type=str, default='./eval_results.pkl', help='path to save evaluation results (.pkl) for visualization')  # 绌?gap 鍒嗙被鎹熷け鐨勬潈閲?
+    parser.add_argument('--output', type=str, default='./eval_results.pkl', help='path to save evaluation results (.pkl) for visualization') 
     parser.add_argument('--kg_bias_weight', type=float, default=0.1, help='weight for KG cosine similarity bias during decoding')
     parser.add_argument("--dir_loss_weight", type=float, default=0.1, help="weight for direction heading loss")
     parser.add_argument("--dir_bias_weight", type=float, default=0.05, help="weight for direction decoding bias")
