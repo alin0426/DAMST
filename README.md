@@ -25,7 +25,7 @@ export ASCEND_SLOG_PRINT_TO_STDOUT=0
 
 python finetune.py  --use_gpu  --dataset_path ./dataset/  --city sz  --num_workers 4  --train_epochs 20  --batch_size 16  --learning_rate 1e-4  --llm_backbone qwen_vl  --device 0  --qwen_model_path /root/work/model/Qwen3.5-4B
 ```
-Replace --qwen_model_path with the actual path to the model parameter files.
+Replace --qwen_model_path with the actual path to the Qwen3.5-VL-4B model parameter files.
 
 
 ## Evaluate
