@@ -2,8 +2,15 @@
 Direction-aware Multi-modality Spatial-Temporal Vehicle Trajectory Recovery for Urban Public Safety
 
 
-## Operating Environment
+## Runtime Environment
 ```bash
+Hardware: Huawei Ascend 910B2
+NPU Memory: 64 GB HBM
+NPU Driver: 24.1.0.3
+npu-smi: 24.1.0.3
+Python: 3.10.16
+PyTorch: 2.4.0
+torch-npu: 2.4.0.post2
 ```
 
 ## Dataset
@@ -14,10 +21,13 @@ Direction-aware Multi-modality Spatial-Temporal Vehicle Trajectory Recovery for 
 export ASCEND_GLOBAL_LOG_LEVEL=3
 export ASCEND_SLOG_PRINT_TO_STDOUT=0
 
-python finetune.py  --use_gpu  --dataset_path ./dataset/  --city sz  --num_workers 4  --train_epochs 20  --batch_size 16  --learning_rate 1e-4  --llm_backbone qwen_vl  --device 0
+python finetune.py  --use_gpu  --dataset_path ./dataset/  --city sz  --num_workers 4  --train_epochs 20  --batch_size 16  --learning_rate 1e-4  --llm_backbone qwen_vl  --device 0  --qwen_model_path /root/work/model/Qwen3.5-4B
 ```
+Replace --qwen_model_path with the actual path to the model parameter files.
+
 
 ## Evaluate
 ```bash
-python evaluate.py  --use_gpu  --dataset_path ./dataset/  --city sz  --llm_backbone qwen_vl  --device 0  --test_cache  --ckpt ./checkpoints/sz_finetune_best.pth
+python evaluate.py  --use_gpu  --dataset_path ./dataset/  --city sz  --llm_backbone qwen_vl  --device 0  --test_cache  --ckpt ./checkpoints/sz_finetune_best.pth  --qwen_model_path /root/work/model/Qwen3.5-4B
 ```
+Replace --qwen_model_path with the actual path to the model parameter files.
